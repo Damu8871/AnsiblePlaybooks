@@ -1,0 +1,6 @@
+---
+- hosts: web-servers
+  - git:
+     repo: 'https://github.com/Damu8871/CheckGitPull.git'
+     dest: /src
+

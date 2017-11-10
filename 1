@@ -1,0 +1,9 @@
+---
+- hosts: web-servers
+  tasks:
+    - name: Apache status
+      yum: name=httpd state=installed 
+      register: output
+    - name: Ouput Console1
+      debug:
+       msg: "{{output}}"

@@ -1,0 +1,9 @@
+---
+ - hosts: web-servers
+   tasks: 
+     - name: Executing shell command
+       command: yum install httpd
+       register: myoutput
+     - name: Output console
+       debug:
+         msg: "{{myoutput}}" 
