@@ -1,0 +1,9 @@
+---
+ - hosts: web-servers
+   tasks:
+     - name: view table data
+       service: name=mysqld state=started enabled=true
+       register: output
+     - name: output console
+       debug:
+        msg: "{{output}}"

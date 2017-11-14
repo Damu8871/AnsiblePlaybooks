@@ -1,0 +1,15 @@
+---
+- hosts: web-servers
+  tasks: 
+    - name: Enabling Repo
+      shell: yum localinstall https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm -y
+      register: repo_output
+    - name: Output for repo
+      debug:
+       msg: "{{repo_output}}"
+    - name: Install mysql
+      yum: name=mysql-server state=present
+      register: output
+    - name: Output console
+      debug:
+       msg: "{{output}}"

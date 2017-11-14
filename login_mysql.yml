@@ -1,0 +1,10 @@
+---
+ - hosts: web-servers
+   tasks:
+      - name: Mysql Connection
+        command: >
+            mysql --user=root --password=root mysql --host=localhost --execute="SELECT * from user"
+        register: stuff
+      - name: Output
+        debug:
+         msg: "{{stuff}}"

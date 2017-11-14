@@ -1,6 +1,9 @@
 ---
 - hosts: web-servers
-  - git:
-     repo: 'https://github.com/Damu8871/CheckGitPull.git'
-     dest: /src
+   
+   - name: Git Clone
+     git:
+       repo: git@github.com:Damu8871/CheckGitPull.git
+       dest: /src/git
+       version: dev
 
